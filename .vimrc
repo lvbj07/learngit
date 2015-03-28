@@ -372,7 +372,12 @@ map \nt :NERDTreeToggle<CR>
 
 nmap <leader>y yyp
 
-nmap <leader>e :split ~/_vimrc<CR>
+if has("win16") || has("win32") || has("win64")
+    nmap <leader>e :split ~/_vimrc<CR>
+else
+    nmap <leader>e :split ~/.vimrc<CR>
+endif
+
 nmap <leader>s :source ~/_vimrc<CR>
 
 nmap <leader>da ggdGi
